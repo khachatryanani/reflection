@@ -1,0 +1,25 @@
+﻿<Window x:Class="WarehouseManagement.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WarehouseManagement"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid x:Name="GroupView">
+  
+            <TreeView Name="GroupView" HorizontalAlignment="Left" Height="140" Margin="27,47,0,0" VerticalAlignment="Top" Width="186" Grid.Row="0" Grid.Column="0" ItemsSource="{Binding}">
+                <TreeView.Resources>
+                <HierarchicalDataTemplate DataType="{x:Type local:Group}" ItemsSource="{Binding Items}">
+                        <TextBlock Text="{Binding Path=Name}" />
+                    </HierarchicalDataTemplate>
+                    <DataTemplate DataType="{x:Type local:Entry}" >
+                        <TextBlock Text="{Binding Path=Name}" />
+                    </DataTemplate>
+                </TreeView.Resources>
+            </TreeView>
+        
+            
+
+    </Grid>
+</Window>
